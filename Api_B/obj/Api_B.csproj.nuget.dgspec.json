@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\源代码包\\MyDemo\\ApiGateway\\Api_B\\Api_B.csproj": {}
+    "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\Api_B\\Api_B.csproj": {}
   },
   "projects": {
-    "D:\\源代码包\\MyDemo\\ApiGateway\\Api_B\\Api_B.csproj": {
+    "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\Api_B\\Api_B.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\源代码包\\MyDemo\\ApiGateway\\Api_B\\Api_B.csproj",
+        "projectUniqueName": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\Api_B\\Api_B.csproj",
         "projectName": "Api_B",
-        "projectPath": "D:\\源代码包\\MyDemo\\ApiGateway\\Api_B\\Api_B.csproj",
+        "projectPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\Api_B\\Api_B.csproj",
         "packagesPath": "C:\\Users\\PingtaoTang\\.nuget\\packages\\",
-        "outputPath": "D:\\源代码包\\MyDemo\\ApiGateway\\Api_B\\obj\\",
+        "outputPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\Api_B\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\ConsulCore.csproj": {
-                "projectPath": "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\ConsulCore.csproj"
+              "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\ConsulCore.csproj": {
+                "projectPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\ConsulCore.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\ConsulCore.csproj": {
+    "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\ConsulCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\ConsulCore.csproj",
+        "projectUniqueName": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\ConsulCore.csproj",
         "projectName": "ConsulCore",
-        "projectPath": "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\ConsulCore.csproj",
+        "projectPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\ConsulCore.csproj",
         "packagesPath": "C:\\Users\\PingtaoTang\\.nuget\\packages\\",
-        "outputPath": "D:\\源代码包\\MyDemo\\ApiGateway\\ConsulCore\\obj\\",
+        "outputPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ConsulCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

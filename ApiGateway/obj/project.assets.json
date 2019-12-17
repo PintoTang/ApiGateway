@@ -12008,11 +12008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\源代码包\\MyDemo\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
+      "projectUniqueName": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
       "projectName": "ApiGateway",
-      "projectPath": "D:\\源代码包\\MyDemo\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
+      "projectPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
       "packagesPath": "C:\\Users\\PingtaoTang\\.nuget\\packages\\",
-      "outputPath": "D:\\源代码包\\MyDemo\\ApiGateway\\ApiGateway\\obj\\",
+      "outputPath": "C:\\Users\\PingtaoTang\\Documents\\GitHub\\ApiGateway\\ApiGateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

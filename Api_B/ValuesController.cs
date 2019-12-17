@@ -32,9 +32,9 @@ namespace Api_B
         {
             var result = "";
             var url = _configuration["Consul:ConsulAddress"].ToString();
-
             using (var consulClient = new ConsulClient(a => a.Address = new Uri(url)))
             {
+                //在全部的Consul服务中寻找ConsulApi_A服务
                 var services = consulClient.Catalog.Service("ConsulApi_A").Result.Response;
                 if (services != null && services.Any())
                 {
@@ -42,7 +42,6 @@ namespace Api_B
                     Random r = new Random();
                     int index = r.Next(services.Count());
                     var service = services.ElementAt(index);
-
                     using (HttpClient client = new HttpClient())
                     {
                         var response = await client.GetAsync($"http://{service.ServiceAddress}:{service.ServicePort}/api/values/print");
