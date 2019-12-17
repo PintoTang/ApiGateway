@@ -1,0 +1,8 @@
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.deps.json
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.dll
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.AssemblyInfoInputs.cache
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.AssemblyInfo.cs
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.csprojAssemblyReference.cache
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.pdb
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.dll
+D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.pdb

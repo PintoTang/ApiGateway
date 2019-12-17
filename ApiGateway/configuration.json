@@ -1,0 +1,123 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://127.0.0.1:9099" //对外暴露的网关地址
+  },
+  "ReRoutes": [
+    {
+      //万能模板："/{url}"  ；万能模板的优先级最低
+      "UpstreamPathTemplate": "/{url}", //上游请求地址模板
+      "UpstreamHttpMethod": [ //上游请求方式
+        "Get",
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/{url}", //下游跳转地址模板
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ //如果使用LoadBalancer的话这里可以填多个节点
+        {
+          "Host": "appliance.abc.com.cn",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/Api_A/{controller}/{action}", //上游请求地址模板
+      "UpstreamHttpMethod": [ //上游请求方式
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/api/{controller}/{action}", //下游跳转地址模板
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ //如果使用LoadBalancer的话这里可以填多个节点
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "RequestIdKey": "",
+      //Ocelot可以对下游请求结果进行缓存 ，目前缓存的功能还不是很强大。它主要是依赖于CacheManager 来实现的
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": "" //Region是对缓存进行的一个分区，我们可以调用Ocelot的 administration API来移除某个区下面的缓存
+      },
+      "ReRouteIsCaseSensitive": false,
+      "ServiceName": "",
+      //服务质量与熔断
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 0, //允许多少个异常请求
+        "DurationOfBreak": 0, // 熔断的时间，单位为秒
+        "TimeoutValue": 0 //如果下游请求的处理时间超过多少秒则自如将请求设置为超时
+      },
+      // 将决定负载均衡的算法：LeastConnection–将请求发往最空闲的那个服务器；RoundRobin–轮流发送；NoLoadBalance–总是发往第一个请求或者是服务发现
+      "LoadBalancer": "LeastConnection",
+      //对请求进行限流可以防止下游服务器因为访问过载而崩溃
+      "RateLimitOptions": {
+        "ClientWhitelist": [], //白名单
+        "EnableRateLimiting": false, //是否启用限流
+        "Period": "5m", //1s, 5m, 1h, 1d
+        "PeriodTimespan": 0, //多少秒之后客户端可以重试
+        "Limit": 0, //在统计时间段内允许的最大请求数量
+
+        //在 GlobalConfiguration下我们还可以进行以下配置
+        "DisableRateLimitHeaders": false, //Http头  X-Rate-Limit 和 Retry-After 是否禁用
+        "QuotaExceededMessage": "Customize Tips!", //当请求过载被截断时返回的消息
+        "HttpStatusCode": 999, //当请求过载被截断时返回的http status
+        "ClientIdHeader": "Test" //用来识别客户端的请求头，默认是 ClientId
+      },
+      ////鉴权认证
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "",
+      //  "AllowedScopes": [] //这里的Scopes将从当前 token 中的 claims中来获取，我们的鉴权服务将依靠于它来实现 。当前路由的下游API需要某个权限时，我们需要在这里声明 。和oAuth2中的scope意义一致。
+      //},
+      ////我们通过认证中的AllowedScopes 拿到claims之后，如果要进行权限的鉴别需要添加以下配置
+      //"RouteClaimsRequirement": {
+      //  "UserType": "registered" //当前请求上下文的token中所带的claims如果没有 name=”UserType” 并且 value=”registered” 的话将无法访问下游服务。
+      //},
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true,
+        "UseCookieContainer": true,
+        "UseTracing": true
+      },
+      "UseServiceDiscovery": false,
+
+      //在请求头转化这里Ocelot为我们提供了两个变量：BaseUrl和DownstreamBaseUrl。
+      //BaseUrl就是我们在GlobalConfiguration里面配置的BaseUrl，
+      //DownstreamBaseUrl是下游服务的Url
+      //请求头转化;比如我们将客户端传过来的Header中的Location值value1改为BaseUrl后传给下游
+      "UpstreamHeaderTransform": {
+        "Location": "value1, {BaseUrl}"
+      },
+      //我们同样可以将下游Header中的Location再转为DownstreamBaseUrl之后再转给客户端。
+      "DownstreamHeaderTransform": {
+        "Location": "{DownstreamBaseUrl}, {BaseUrl}"
+      }
+      ////Claims转化: 例如：name=”sub” value=”usertypevalue|useridvalue”
+      ////Ocelot为我们提供的功能分为三段
+      ////第一段是Claims[sub]，很好理解[] 里面是我们的claim的名称。
+      ////第二段是  > 表示对字符串进行拆分, 后面跟着拆分完之后我们要取的那个数组里面的某一个元素用 value[index]来表示，取第0位元素也可以直接用value。
+      ////第三段也是以 > 开头后面跟着我们的分隔符，在我们上面的例子分隔符是 |
+      //"AddHeadersToRequest": { // Claims to Headers
+      //  "CustomerId": "Claims[sub] > value[1] > |" //Claims 为sub；对value进行|拆分；取索引为1的值
+      //},
+      //"AddClaimsToRequest": { //Claims to Claims
+      //  "UserType": "Claims[sub] > value[0] > |", //Claims 为sub；对value进行|拆分；取索引为0的值
+      //  "UserId": "Claims[sub] > value[1] > |" //Claims 为sub；对value进行|拆分；取索引为1的值
+      //},
+      //"AddQueriesToRequest": { // Claims to Query String
+      //  "LocationId": "Claims[LocationId] > value" //Claims 为LocationId；取value的值
+      //}
+    },
+    {
+      "UpstreamPathTemplate": "/Api_B/{controller}/{action}", //上游请求地址模板
+      "UpstreamHttpMethod": [ //上游请求方式
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/api/{controller}/{action}", //下游跳转地址模板
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ //如果使用LoadBalancer的话这里可以填多个节点
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ]
+    }
+  ]
+}

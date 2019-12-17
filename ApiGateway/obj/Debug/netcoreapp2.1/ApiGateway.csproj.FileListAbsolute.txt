@@ -1,0 +1,15 @@
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\ApiGateway.deps.json
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\ApiGateway.runtimeconfig.json
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\ApiGateway.runtimeconfig.dev.json
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\ApiGateway.dll
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\ApiGateway.pdb
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.csprojAssemblyReference.cache
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.RazorAssemblyInfo.cache
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.RazorAssemblyInfo.cs
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.AssemblyInfoInputs.cache
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.AssemblyInfo.cs
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.RazorTargetAssemblyInfo.cache
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.dll
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\obj\Debug\netcoreapp2.1\ApiGateway.pdb
+D:\源代码包\MyDemo\ApiGateway\ApiGateway\bin\Debug\netcoreapp2.1\configuration.json
