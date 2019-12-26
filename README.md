@@ -5,7 +5,8 @@
  ApiGateway项目下的configuration.json有比较完整的Ocelot配置，有详细的注释说明。
 
  1.1 Startup.cs
- public class Startup
+ 
+    public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
@@ -39,6 +40,7 @@
     }
     
  1.2 configuration.json
+ 
     {
   "GlobalConfiguration": {
     //"BaseUrl": "http://127.0.0.1:9099", //对外暴露的网关地址
@@ -133,14 +135,15 @@
         "AllowedScopes": [] //这里的Scopes将从当前 token 中的 claims中来获取，我们的鉴权服务将依靠于它来实现 。当前路由的下游API需要某个权限时，我们需要在这里声明 。和oAuth2中的scope意义一致。
       }
     }
-  ]
-}
+    ]
+    }
 
 
 # 2. ConsulCore
   简单地封装了服务的注册与注销功能（以后还得继续完善）。
   2.1 ConsulBuilderExtensions.cs
-  public static class ConsulBuilderExtensions
+  
+    public static class ConsulBuilderExtensions
     {
         public static IApplicationBuilder RegisterConsul(this IApplicationBuilder app, IApplicationLifetime lifetime, HealthService healthService, ConsulService consulService)
         {
