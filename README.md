@@ -227,3 +227,22 @@
             app.RegisterConsul(lifetime, healthService, consulService);
         }
     }
+    
+ # 4. Pinto.HostListener
+ 
+ 这个项目主要是演示了如何使用RabbitMQ.
+ 使用IHostedService后台任务启动消息监听.
+ 使用IOptions选项模式，支持配置文件热重载.
+ 设置了RabbitMQ的断线恢复机制 AutomaticRecoveryEnabled=true
+ 启动消息发送确认机制_channel.ConfirmSelect();
+ 确认RabbitMQ服务端收到消息_channel.WaitForConfirms();
+ 设置了消息重试机制
+ 测试了direct和topic两种交换机
+ 设置死信交换机
+ var retryDic = new Dictionary<string, object>
+            {
+                {"x-dead-letter-exchange", Exchange+"_Retry"},
+                {"x-dead-letter-routing-key", RoutingKey+"_Retry"}
+            };  
+ 
+ 
