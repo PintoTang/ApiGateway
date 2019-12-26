@@ -14,6 +14,14 @@ namespace Api_B
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
+                {
+                    //IdentityServer4 地址
+                    options.Authority = "http://localhost:5003";
+                    options.RequireHttpsMetadata = false;
+                    options.Audience = "Api_B";
+                });
         }
 
         public Startup(IConfiguration configuration)
@@ -30,7 +38,7 @@ namespace Api_B
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
             app.UseMvc(routes => {
                 routes.MapRoute("areaRoute", "view/{area:exists}/{controller}/{action=Index}/{id?}");
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");

@@ -1,0 +1,14 @@
+{
+  "RabbitConnection": {
+    "HostName": "127.0.0.1",
+    "UserName": "admin",
+    "Password": "admin",
+    "Port": 5672
+  },
+  "RabbitExchange": {
+    "Exchange": "TestExc1",
+    "QueueName": "TestQue1",
+    "ExchangeType": "topic",
+    "RouteKey": "TestKey2"
+  }
+}

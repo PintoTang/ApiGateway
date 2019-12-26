@@ -1,6 +1,12 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "http://127.0.0.1:9099" //对外暴露的网关地址
+    //"BaseUrl": "http://127.0.0.1:9099", //对外暴露的网关地址
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "接口限流!",
+      "HttpStatusCode": 200,
+      "ClientIdHeader": "ClientId"
+    }
   },
   "ReRoutes": [
     {
@@ -62,11 +68,11 @@
         "HttpStatusCode": 999, //当请求过载被截断时返回的http status
         "ClientIdHeader": "Test" //用来识别客户端的请求头，默认是 ClientId
       },
-      ////鉴权认证
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "",
-      //  "AllowedScopes": [] //这里的Scopes将从当前 token 中的 claims中来获取，我们的鉴权服务将依靠于它来实现 。当前路由的下游API需要某个权限时，我们需要在这里声明 。和oAuth2中的scope意义一致。
-      //},
+      //鉴权认证
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Api_A",
+        "AllowedScopes": [] //这里的Scopes将从当前 token 中的 claims中来获取，我们的鉴权服务将依靠于它来实现 。当前路由的下游API需要某个权限时，我们需要在这里声明 。和oAuth2中的scope意义一致。
+      },
       ////我们通过认证中的AllowedScopes 拿到claims之后，如果要进行权限的鉴别需要添加以下配置
       //"RouteClaimsRequirement": {
       //  "UserType": "registered" //当前请求上下文的token中所带的claims如果没有 name=”UserType” 并且 value=”registered” 的话将无法访问下游服务。
@@ -115,9 +121,13 @@
       "DownstreamHostAndPorts": [ //如果使用LoadBalancer的话这里可以填多个节点
         {
           "Host": "localhost",
-          "Port": 5003
+          "Port": 5002
         }
-      ]
+      ], //鉴权认证
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Api_B",
+        "AllowedScopes": [] //这里的Scopes将从当前 token 中的 claims中来获取，我们的鉴权服务将依靠于它来实现 。当前路由的下游API需要某个权限时，我们需要在这里声明 。和oAuth2中的scope意义一致。
+      }
     }
   ]
 }

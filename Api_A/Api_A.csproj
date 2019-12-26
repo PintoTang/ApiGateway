@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsulCore\ConsulCore.csproj" />
+    <ProjectReference Include="..\IdentityServer\IdentityServer.csproj" />
   </ItemGroup>
 
 </Project>

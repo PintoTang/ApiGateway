@@ -41,11 +41,19 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "IdentityServer4": {
+              "target": "Package",
+              "version": "[2.5.4, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.1, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",

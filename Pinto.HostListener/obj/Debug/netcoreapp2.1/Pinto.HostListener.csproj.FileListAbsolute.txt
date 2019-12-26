@@ -1,0 +1,16 @@
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Pinto.HostListener.deps.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Pinto.HostListener.runtimeconfig.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Pinto.HostListener.runtimeconfig.dev.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Pinto.HostListener.dll
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.csprojAssemblyReference.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.RazorAssemblyInfo.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.RazorAssemblyInfo.cs
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.AssemblyInfoInputs.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.AssemblyInfo.cs
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.RazorTargetAssemblyInfo.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\Pinto.HostListener.pdb
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.dll
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\obj\Debug\netcoreapp2.1\Pinto.HostListener.pdb
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\config.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\Pinto.HostListener\bin\Debug\netcoreapp2.1\appsettings.json

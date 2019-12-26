@@ -14,11 +14,13 @@ namespace Api_B
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            //.UseKestrel()
+            .UseStartup<Startup>()
+            .UseUrls(config.GetValue<string>("urls"))
+            .Build()
+            .Run();
+        }
     }
 }

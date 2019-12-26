@@ -1,4 +1,5 @@
 ﻿using ConsulCore;
+using IdentityServer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +14,17 @@ namespace Api_A
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddMvcCore().AddAuthorization().AddJsonFormatters()
+                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddAuthentication("Bearer")
+                 .AddJwtBearer("Bearer", options =>
+                 {
+                     //IdentityServer4 地址
+                     options.Authority = "http://localhost:5003";
+                     options.RequireHttpsMetadata = false;
+                     options.Audience = "Api_A";
+                 });
+
         }
 
         public Startup(IConfiguration configuration)
@@ -30,6 +41,8 @@ namespace Api_A
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
 
             app.UseMvc(routes => {
                 routes.MapRoute("areaRoute", "view/{area:exists}/{controller}/{action=Index}/{id?}");
@@ -53,6 +66,7 @@ namespace Api_A
             };
 
             app.RegisterConsul(lifetime, healthService, consulService);
+
         }
     }
 }

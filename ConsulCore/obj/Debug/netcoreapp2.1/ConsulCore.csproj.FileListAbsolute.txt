@@ -6,3 +6,11 @@ D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.
 D:\源代码包\MyDemo\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.pdb
 D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.dll
 D:\源代码包\MyDemo\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.pdb
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.deps.json
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.dll
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\bin\Debug\netcoreapp2.1\ConsulCore.pdb
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.csprojAssemblyReference.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.AssemblyInfoInputs.cache
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.AssemblyInfo.cs
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.dll
+C:\Users\PingtaoTang\Documents\GitHub\ApiGateway\ConsulCore\obj\Debug\netcoreapp2.1\ConsulCore.pdb
