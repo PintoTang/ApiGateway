@@ -240,9 +240,9 @@
  测试了direct和topic两种交换机
  设置死信交换机
  var retryDic = new Dictionary<string, object>
-            {
-                {"x-dead-letter-exchange", Exchange+"_Retry"},
-                {"x-dead-letter-routing-key", RoutingKey+"_Retry"}
-            };  
+ {
+   {"x-dead-letter-exchange", Exchange+"_Retry"},
+   {"x-dead-letter-routing-key", RoutingKey+"_Retry"}
+ };  
  
  
