@@ -169,3 +169,56 @@
             return app;
         }
     }
+    
+ # 3. Api_A
+  主要是演示如何使用认证和服务注册
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvcCore().AddAuthorization().AddJsonFormatters()
+                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddAuthentication("Bearer")
+                 .AddJwtBearer("Bearer", options =>
+                 {
+                     //IdentityServer4 地址
+                     options.Authority = "http://localhost:5003";
+                     options.RequireHttpsMetadata = false;
+                     options.Audience = "Api_A";
+                 });
+
+        }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        IConfiguration Configuration { get; }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseAuthentication();
+            app.UseMvc(routes => {
+                routes.MapRoute("areaRoute", "view/{area:exists}/{controller}/{action=Index}/{id?}");
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
+            });
+            ConsulService consulService = new ConsulService()
+            {
+                IP = Configuration["Consul:IP"],
+                Port = Convert.ToInt32(Configuration["Consul:Port"])
+            };
+            HealthService healthService = new HealthService()
+            {
+                IP = Configuration["Service:IP"],
+                Port = Convert.ToInt32(Configuration["Service:Port"]),
+                Name = Configuration["Service:Name"],
+            };
+            app.RegisterConsul(lifetime, healthService, consulService);
+        }
+    }
