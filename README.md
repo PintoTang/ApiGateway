@@ -3,6 +3,7 @@
  Ocelot具有身份验证，监控，负载均衡，缓存，请求分片与管理，静态响应处理等功能。
  API网关方式的核心要点是，所有的客户端和消费端都通过统一的网关接入微服务，在网关层处理所有的非业务功能。
  ApiGateway项目下的configuration.json有比较完整的Ocelot配置，有详细的注释说明。
+
  1.1 Startup.cs
  public class Startup
     {
