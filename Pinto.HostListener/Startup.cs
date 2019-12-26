@@ -31,9 +31,7 @@ namespace Pinto.HostListener
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseMvc();
-
         }
     }
 }

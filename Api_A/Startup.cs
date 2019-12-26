@@ -41,32 +41,24 @@ namespace Api_A
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseAuthentication();
-
             app.UseMvc(routes => {
                 routes.MapRoute("areaRoute", "view/{area:exists}/{controller}/{action=Index}/{id?}");
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });
-
             ConsulService consulService = new ConsulService()
             {
                 IP = Configuration["Consul:IP"],
                 Port = Convert.ToInt32(Configuration["Consul:Port"])
             };
-
             HealthService healthService = new HealthService()
             {
                 IP = Configuration["Service:IP"],
-
                 Port = Convert.ToInt32(Configuration["Service:Port"]),
-
                 Name = Configuration["Service:Name"],
             };
-
             app.RegisterConsul(lifetime, healthService, consulService);
-
         }
     }
 }

@@ -16,10 +16,12 @@ namespace ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            //往容器添加认证服务，添加了两个Bearer认证方案
             services.AddAuthentication()
                 .AddJwtBearer("Api_A", i =>
                 {
                     i.Audience = "Api_A";
+                    //IdentityServer4服务端地址 
                     i.Authority = "http://localhost:5003";
                     i.RequireHttpsMetadata = false;
                 }).AddJwtBearer("Api_B", y =>
@@ -28,6 +30,7 @@ namespace ApiGateway
                     y.Authority = "http://localhost:5003";
                     y.RequireHttpsMetadata = false;
                 });
+            //往容器添加Ocelot服务，使用configuration.json里面的配置信息
             services.AddOcelot(new ConfigurationBuilder().AddJsonFile("configuration.json").Build());
         }
 
