@@ -42,7 +42,7 @@
  1.2 configuration.json
  
     {
-  "GlobalConfiguration": {
+    "GlobalConfiguration": {
     //"BaseUrl": "http://127.0.0.1:9099", //对外暴露的网关地址
     "RateLimitOptions": {
       "DisableRateLimitHeaders": false,
@@ -50,8 +50,8 @@
       "HttpStatusCode": 200,
       "ClientIdHeader": "ClientId"
     }
-  },
-  "ReRoutes": [
+    },
+    "ReRoutes": [
     {
       "UpstreamPathTemplate": "/Api_A/{controller}/{action}", //上游请求地址模板
       "UpstreamHttpMethod": [ //上游请求方式
@@ -141,7 +141,8 @@
 
 # 2. ConsulCore
   简单地封装了服务的注册与注销功能（以后还得继续完善）。
-  2.1 ConsulBuilderExtensions.cs
+  
+ 2.1 ConsulBuilderExtensions.cs
   
     public static class ConsulBuilderExtensions
     {
